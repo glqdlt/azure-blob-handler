@@ -12,6 +12,8 @@ import java.net.URISyntaxException;
  */
 public class SimpleAzureBlobRepositoryTest {
 
+
+
     @Test
     public void generateLink() throws URISyntaxException {
         SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(null);

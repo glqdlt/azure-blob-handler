@@ -6,7 +6,7 @@
 
     <groupId>com.glqdlt.helper</groupId>
     <artifactId>azure-blob-handler</artifactId>
-    <version>jdk8-0.1-snapshot</version>
+    <version>jdk8-0.2</version>
 
     <dependencies>
         <dependency>
@@ -35,5 +35,17 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snap</id>
+            <url>http://172.28.89.96:18081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>rel</id>
+            <url>http://172.28.89.96:18081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+
 
 </project>

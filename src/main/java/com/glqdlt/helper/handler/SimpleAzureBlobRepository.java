@@ -44,10 +44,10 @@ public class SimpleAzureBlobRepository implements AzureBlobRepository {
     @Override
     public URI upload(File file, String uploadName, String uploadPath) {
         final CloudBlobClient client = getClient();
-        try {
+        try (FileInputStream a = new FileInputStream(file)){
             CloudBlobContainer container = client.getContainerReference(uploadPath);
             CloudBlockBlob blob = container.getBlockBlobReference(uploadName);
-            blob.upload(new FileInputStream(file), file.length());
+            blob.upload(a, file.length());
             return new URI(generateUrl(client.getStorageUri().getPrimaryUri(), uploadPath, uploadName));
         } catch (URISyntaxException | StorageException e) {
             throw new AzureInfraError(e.getMessage(), e);

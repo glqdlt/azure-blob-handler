@@ -6,7 +6,7 @@
 
     <groupId>com.glqdlt.helper</groupId>
     <artifactId>azure-blob-handler</artifactId>
-    <version>jdk8-0.2</version>
+    <version>jdk8-0.3</version>
 
     <dependencies>
         <dependency>

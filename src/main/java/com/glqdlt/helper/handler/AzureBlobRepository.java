@@ -16,4 +16,7 @@ public interface AzureBlobRepository {
 
     URI upload(File file, String uploadName, String uploadPath);
 
+    File download(File saveDir, String blobContainerPath, String downloadFileName);
+
+    File download(File saveFile, String blobDownloadUrl);
 }

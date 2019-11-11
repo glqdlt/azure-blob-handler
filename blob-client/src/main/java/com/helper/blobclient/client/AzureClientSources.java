@@ -1,7 +1,7 @@
-package com.glqdlt.helper.client;
+package com.helper.blobclient.client;
 
-import com.glqdlt.helper.handler.AzureBlobStorageConnectionSource;
-import com.glqdlt.helper.handler.SimpleClientFactory;
+import com.helper.blobclient.handler.AzureBlobStorageConnectionSource;
+import com.helper.blobclient.handler.SimpleClientFactory;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
 
 /**

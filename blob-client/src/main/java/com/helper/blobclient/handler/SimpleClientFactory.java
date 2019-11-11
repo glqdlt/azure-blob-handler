@@ -1,4 +1,4 @@
-package com.glqdlt.helper.handler;
+package com.helper.blobclient.handler;
 
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;

@@ -1,6 +1,6 @@
-package com.glqdlt.helper.handler;
+package com.helper.blobclient.handler;
 
-import com.glqdlt.helper.client.AzureClientSources;
+import com.helper.blobclient.client.AzureClientSources;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ import java.util.Properties;
 
 /**
  * @author Jhun
- * 2019-10-16
+ * 2019-11-11
  */
 public class SimpleAzureBlobRepositoryTest {
 

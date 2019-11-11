@@ -7,6 +7,17 @@
     <groupId>com.glqdlt.helper</groupId>
     <artifactId>azure-blob-handler</artifactId>
     <version>jdk8-0.3</version>
+    <developers>
+        <developer>
+            <email>dlfdnd0725@gmail.com</email>
+            <name>jhun</name>
+            <id>glqdlt</id>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/glqdlt/azure-blob-handler.git</url>
+    </scm>
 
     <dependencies>
         <dependency>

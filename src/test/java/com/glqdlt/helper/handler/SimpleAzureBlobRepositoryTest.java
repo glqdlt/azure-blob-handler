@@ -45,6 +45,19 @@ public class SimpleAzureBlobRepositoryTest {
     @Test
     public void upload() {
         URL dummyJson = ClassLoader.getSystemClassLoader().getResource("dummy.json");
+        final String connectionUrl;
+        final String container;
+        try (InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream("test.properties")) {
+            Properties properties = new Properties();
+            properties.load(is);
+            connectionUrl = properties.getProperty("azure.blob.connection.url");
+            container = properties.getProperty("azure.blob.upload.target.container");
+        } catch (IOException e) {
+            throw new RuntimeException(e.getMessage(), e);
+        }
+        SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureClientSources.make(connectionUrl));
+        URI r = simpleAzureBlobRepository.upload(new File(dummyJson.getPath()), container);
+        Assert.assertNotNull(r.getPath());
     }
 
     @Test

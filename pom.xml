@@ -20,19 +20,10 @@
         <url>https://github.com/glqdlt/azure-blob-handler.git</url>
     </scm>
     <modules>
-        <module>key-valut-client</module>
         <module>blob-client</module>
-        <module>active-directory-client</module>
     </modules>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.microsoft.azure/msal4j -->
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>msal4j</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -40,16 +31,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snap</id>
-            <url>http://172.28.89.96:18081/repository/maven-snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>rel</id>
-            <url>http://172.28.89.96:18081/repository/maven-releases/</url>
-        </repository>
-    </distributionManagement>
-
 
 </project>

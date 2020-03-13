@@ -1,7 +1,7 @@
 
-# azure-blob-handler
+# Azure-blob-handler
 
-## concept
+## Concept
 
 간단한 azure blob storage 헬퍼 라이브러리 입니다.
 azure 에서 제공해주는 SDK 를 사용하기 쉽게 랩핑 된 수준입니다.

@@ -1,10 +1,10 @@
-package com.helper.blobclient.handler;
+package com.helper.blobclient.client;
 
 /**
  * @author Jhun
  * 2019-10-16
  */
-public class AzureBlobStorageConnectionSource {
+public class ConnectionStringFactory {
 
     private final String connectionString;
 
@@ -13,15 +13,15 @@ public class AzureBlobStorageConnectionSource {
     }
 
 
-    public AzureBlobStorageConnectionSource(String connectionString) {
+    public ConnectionStringFactory(String connectionString) {
         this.connectionString = connectionString;
     }
 
-    public AzureBlobStorageConnectionSource(String accountName, String accountKey) {
+    public ConnectionStringFactory(String accountName, String accountKey) {
         this.connectionString = makeConnectionString("https", accountName, accountKey);
     }
 
-    public AzureBlobStorageConnectionSource(String accountName, String accountKey, String scheme) {
+    public ConnectionStringFactory(String accountName, String accountKey, String scheme) {
         this.connectionString = makeConnectionString(scheme, accountName, accountKey);
     }
 

@@ -1,4 +1,4 @@
-package com.helper.blobclient.handler;
+package com.helper.blobclient.handler.error;
 
 /**
  * @author Jhun

@@ -1,6 +1,6 @@
 package com.helper.blobclient.handler;
 
-import com.helper.blobclient.client.AzureClientSources;
+import com.helper.blobclient.client.AzureBlobClientFactories;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,8 +21,10 @@ public class SimpleAzureBlobRepositoryTest {
     @Test
     public void generateLink() throws URISyntaxException {
         SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(null);
-        String z = simpleAzureBlobRepository.generateUrl(new URI("http://www.naver.com"), "some/some2/some3", "file.png");
-        Assert.assertEquals("http://www.naver.com/some/some2/some3/file.png", z);
+        URI z = simpleAzureBlobRepository.generateUrl(new URI("http://www.naver.com"), "some/some2/some3", "file.png");
+        Assert.assertEquals("http://www.naver.com/some/some2/some3/file.png", z.toString());
+        Assert.assertEquals("/some/some2/some3/file.png", z.getPath());
+        Assert.assertEquals("www.naver.com",z.getHost());
     }
 
     @Test
@@ -55,7 +57,7 @@ public class SimpleAzureBlobRepositoryTest {
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage(), e);
         }
-        SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureClientSources.make(connectionUrl));
+        SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureBlobClientFactories.createSimpleClient(connectionUrl));
         URI r = simpleAzureBlobRepository.upload(new File(dummyJson.getPath()), container);
         Assert.assertNotNull(r.getPath());
     }
@@ -74,7 +76,7 @@ public class SimpleAzureBlobRepositoryTest {
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage(), e);
         }
-        SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureClientSources.make(connectionUrl));
+        SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureBlobClientFactories.createSimpleClient(connectionUrl));
         File ee = simpleAzureBlobRepository.download(new File(downloadPath), targetUrl);
         boolean d = ee.delete();
         if (!d) {

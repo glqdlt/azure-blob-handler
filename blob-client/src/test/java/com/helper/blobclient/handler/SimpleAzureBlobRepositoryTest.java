@@ -2,6 +2,7 @@ package com.helper.blobclient.handler;
 
 import com.helper.blobclient.client.AzureBlobClientFactories;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -44,6 +45,7 @@ public class SimpleAzureBlobRepositoryTest {
     }
 
 
+    @Ignore
     @Test
     public void upload() {
         URL dummyJson = ClassLoader.getSystemClassLoader().getResource("dummy.json");
@@ -62,6 +64,7 @@ public class SimpleAzureBlobRepositoryTest {
         Assert.assertNotNull(r.getPath());
     }
 
+    @Ignore
     @Test
     public void download() {
         final String connectionUrl;

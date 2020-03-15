@@ -34,10 +34,10 @@ SDK 공식 문서는 [아래](https://github.com/Azure/azure-storage-java/tree/l
 
 public class SomeUpload{
     public static void main(String[] args){
-        final String connectionUrl = "azure-connectionUrl-token";
+        final String connectionUrl = "azure-connectionUrl-with-token";
         final String blobUploadPath = "/container/path1/path2";
         SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureBlobClientFactories.createSimpleClient(connectionUrl));
-        URI r = simpleAzureBlobRepository.upload(new File("/some/file/direcotry/file.file"), blobUploadPath); 
+        URI r = simpleAzureBlobRepository.upload(new File("/some/file/direcotry/image.png"), blobUploadPath); 
     }
 }
     
@@ -46,10 +46,10 @@ public class SomeUpload{
 ### download
 
 ```java
-public class SomeUpload{
+public class SomeDownload{
     public static void main(String[] args){
-        final String connectionUrl = "azure-connectionUrl-token";
-        final String targetUrl = "/container/path1/path2/file.file";
+        final String connectionUrl = "azure-connectionUrl-with-token";
+        final String targetUrl = "/container/path1/path2/image.png";
         final String downloadPath = "/some/my/download/path";
         SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureBlobClientFactories.createSimpleClient(connectionUrl));
         URI r = simpleAzureBlobRepository.download(new File(downloadPath), targetUrl);

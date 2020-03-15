@@ -50,7 +50,7 @@ public class SomeDownload{
     public static void main(String[] args){
         final String connectionUrl = "azure-connectionUrl-with-token";
         final String targetBlobPath = "/container/path1/path2/image.png";
-        final String downloadPath = "/some/my/download/path";
+        final String downloadDirectory = "/some/my/download/path";
         SimpleAzureBlobRepository simpleAzureBlobRepository = new SimpleAzureBlobRepository(AzureBlobClientFactories.createSimpleClient(connectionUrl));
         URI r = simpleAzureBlobRepository.download(new File(downloadPath), targetUrl);
     }
